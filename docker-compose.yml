@@ -1,0 +1,29 @@
+version: '3'
+services:
+  php:
+    build:
+        context: ./dockerfiles
+        dockerfile: php.Dockerfile
+    container_name: 'webserver-php'
+    volumes:
+      - './public:/var/www/html'
+    depends_on:
+      - mariadb
+
+  mariadb:
+    image: mariadb:10.6.0
+    container_name: LAMP-mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+  nginx:
+    image: nginx:stable
+    container_name: nginx
+    links:
+      - 'php'
+    volumes:
+      - './public:/var/www/html'
+      - './nginx:/etc/nginx/conf.d'
+    ports:
+      - '80:80'
+      - '443:443'
+
