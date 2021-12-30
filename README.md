@@ -12,4 +12,4 @@ To set mysql root password, update the value of MYSQL_ROOT_PASSWORD in .env
 Credits
 -------
 * [Abdussalam M. Al-Ali](https://www.linkedin.com/in/abdussalam-alali/)
-* [All contributors](https://github.com/syrian-open-source/laravel-youtube-iframe-generator/graphs/contributors)
+* [All contributors](https://github.com/syrian-open-source/LEMP-Stack-docker/graphs/contributors)
